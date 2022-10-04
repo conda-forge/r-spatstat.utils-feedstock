@@ -13,23 +13,22 @@ source:
   sha256: 5b914308df0585993084b5e95967864eea0314c98ed6af58267b64b2235dfe22
 
 build:
-  merge_build_host: True  # [win]
-  script: R CMD INSTALL --build .
-  number: 0
+  merge_build_host: True           # [win]
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -48,6 +47,7 @@ about:
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
