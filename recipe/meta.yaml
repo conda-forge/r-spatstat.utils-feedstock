@@ -1,4 +1,4 @@
-{% set version = "3.0-4" %}
+{% set version = "3.0-5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spatstat.utils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatstat.utils/spatstat.utils_{{ version }}.tar.gz
-  sha256: 5d418e39e0e20a14d44779fcde17caea9bf8075f1647baa59342e824b40f3cc4
+  sha256: eb98665f20fb007d06575ed3357cbaaeaf4ed5bb201238139c78bbc1ae23f596
 
 build:
   merge_build_host: true  # [win]
@@ -23,7 +23,9 @@ requirements:
   build:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
