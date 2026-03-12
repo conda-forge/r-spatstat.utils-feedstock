@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spatstat.util
 About r-spatstat.utils
 ----------------------
 
-Home: https://cran.r-project.org/web/packages/spatstat.utils
+Home: http://spatstat.org/
 
 Package license: GPL-2.0-or-later
 
@@ -16,7 +16,7 @@ Summary: Contains utility functions for the 'spatstat' package which may also be
 About r-spatstat.utils
 ----------------------
 
-Home: https://cran.r-project.org/web/packages/spatstat.utils
+Home: http://spatstat.org/
 
 Package license: GPL-2.0-or-later
 
