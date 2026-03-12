@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -40,7 +44,7 @@ test:
     - "\"%R%\" -e \"library('spatstat.utils')\""  # [win]
 
 about:
-  home: https://cran.r-project.org/web/packages/spatstat.utils
+  home: http://spatstat.org/
   license: GPL-2.0-or-later
   summary: Contains utility functions for the 'spatstat' package which may also be useful for other purposes.
   license_family: GPL2
