@@ -1,21 +1,25 @@
-{% set version = "3.2-1" %}
+{% set version = "3.2-2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-spatstat.utils
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/spatstat.utils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatstat.utils/spatstat.utils_{{ version }}.tar.gz
-  sha256: 619a129077016c2c14f7bb8cd8b66abe7dcf7458187e5d984e9b77e9e6bd6fb1
+  sha256: f8f9d4e86d623b9c8419c18e5cce484764f3e7abc42391adb4c2d6b561e02157
 
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -40,7 +44,7 @@ test:
     - "\"%R%\" -e \"library('spatstat.utils')\""  # [win]
 
 about:
-  home: https://cran.r-project.org/web/packages/spatstat.utils
+  home: http://spatstat.org/
   license: GPL-2.0-or-later
   summary: Contains utility functions for the 'spatstat' package which may also be useful for other purposes.
   license_family: GPL2
