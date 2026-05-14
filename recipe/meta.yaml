@@ -3,7 +3,7 @@
 
 package:
   name: r-spatstat.utils
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -46,7 +46,7 @@ test:
 about:
   home: http://spatstat.org/
   license: GPL-2.0-or-later
-  summary: Contains utility functions for the 'spatstat' package which may also be useful for other purposes.
+  summary: Contains utility functions for the 'spatstat' family of packages which may also be useful for other purposes.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
