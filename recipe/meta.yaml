@@ -1,4 +1,4 @@
-{% set version = "3.2-2" %}
+{% set version = "3.2-3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spatstat.utils_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatstat.utils/spatstat.utils_{{ version }}.tar.gz
-  sha256: f8f9d4e86d623b9c8419c18e5cce484764f3e7abc42391adb4c2d6b561e02157
+  sha256: be2a9a90fdc6ba833e1e7156d5811ae30542c0458a2e76e6b88f4b4082e549d3
 
 build:
   number: 0
@@ -46,7 +46,7 @@ test:
 about:
   home: http://spatstat.org/
   license: GPL-2.0-or-later
-  summary: Contains utility functions for the 'spatstat' package which may also be useful for other purposes.
+  summary: Contains utility functions for the 'spatstat' family of packages which may also be useful for other purposes.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2

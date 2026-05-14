@@ -11,7 +11,7 @@ Home: http://spatstat.org/
 
 Package license: GPL-2.0-or-later
 
-Summary: Contains utility functions for the 'spatstat' package which may also be useful for other purposes.
+Summary: Contains utility functions for the 'spatstat' family of packages which may also be useful for other purposes.
 
 About r-spatstat.utils
 ----------------------
@@ -20,7 +20,7 @@ Home: http://spatstat.org/
 
 Package license: GPL-2.0-or-later
 
-Summary: Contains utility functions for the 'spatstat' package which may also be useful for other purposes.
+Summary: Contains utility functions for the 'spatstat' family of packages which may also be useful for other purposes.
 
 Current build status
 ====================
